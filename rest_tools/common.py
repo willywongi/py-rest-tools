@@ -2,13 +2,18 @@ from datetime import datetime, timedelta
 from functools import wraps
 import json
 import logging
-from typing import Any, Mapping
+from typing import Any, Mapping, Optional
 from urllib.parse import urlencode
 
 import requests
 
 
 logger = logging.getLogger('rest_tools')
+GET = "get"
+POST = "post"
+PUT = "put"
+PATCH = "patch"
+DELETE = "delete"
 
 
 def cache(fn):
@@ -47,8 +52,8 @@ def expiring(getter):
 
 
 def common_client(method: str, base_url: str, path:str="/", 
-                    parameters:Mapping=None, url:str=None, headers:Mapping=None, 
-                    data:Any=None, form_data:Mapping=None, files:Mapping=None) -> Any:
+                    parameters:Optional[Mapping]=None, url:Optional[str]=None, headers:Optional[Mapping]=None, 
+                    data:Any=None, form_data:Optional[Mapping]=None, files:Optional[Mapping]=None) -> Any:
     """Practical, common REST client. 
 
     :param method: the http verb (GET, POST, DELETE,...)
