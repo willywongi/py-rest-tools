@@ -6,7 +6,7 @@ from .common import common_client, GET
 
 def get_livestorm_client(apikey, base_url="https://api.livestorm.co/v1"):
     """Returns a callable you can use to interact with Livestorm API.
-    :param access_token: A token from the Account Settings > Integrations page
+    :param apikey: A token from the Account Settings > Integrations page
         (see: https://developers.livestorm.co/docs/authorization)
     :param base_url: the default should be changed only if asked from Livestorm
     """
