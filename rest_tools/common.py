@@ -89,7 +89,7 @@ def get_complete_url(base_url:str, path:str, parameters:Mapping=None, url:str=No
         query = {}
 
     if query:
-        complete_url = f"{complete_url}?{urlencode(query)}"
+        complete_url = f"{complete_url}?{urlencode(query, doseq=True)}"
     
     return complete_url
 
