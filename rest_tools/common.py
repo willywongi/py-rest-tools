@@ -80,7 +80,9 @@ def common_client(method: str, base_url: str, path:str="/",
 
 
 def get_complete_url(base_url:str, path:str, parameters:Mapping=None, url:str=None) -> str:
-    if not url:
+    if url:
+        complete_url = url
+    else:
         complete_url = f"{base_url}{path}"
 
     if parameters:
