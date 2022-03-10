@@ -67,7 +67,7 @@ def get_mailchimp_client(apikey:str, count:int=DEFAULT_COUNT) -> Callable:
                     offset = offset + count
             return results
         else:
-            return common_client(method, base_url, path, parameters, url, data)
+            return common_client(method, base_url, path, parameters=parameters, url=url, headers=headers, data=data)
     
     return mailchimp_client
 
