@@ -6,13 +6,17 @@ from typing import Callable
 
 import requests
 
-from .common import common_client, expiring, GET
+from .common import common_client, expiring, GET, logger
 
 
 @expiring(itemgetter('exp'))
 def get_wordpress_access_token(base_url, api_key, api_secret):
     r = requests.post(f"{base_url}/wp/v2/token", data={'api_key': api_key, 'api_secret': api_secret})
-    r.raise_for_status()
+    try:
+        r.raise_for_status()
+    except requests.HTTPError as exc:
+        logger.error("WP Error (%s): %s", exc, r.text)
+        raise
     token = r.json()
     return token
 
