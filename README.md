@@ -91,3 +91,7 @@ This client requires the [JWT Auth plugin](https://github.com/WP-API/jwt-auth) t
  - `api_key`: Key pair, key
  - `api_secret`: Key pair, secret. 
  - `base_url`: The installation path of your WP installation; please include `/wp-json` at the end.
+### Directus
+#### `get_directus_client(token, base_url)`
+ - `token`: A _static token_ for the user (see: https://docs.directus.io/reference/authentication/#access-tokens)
+ - `base_url`: the complete base URL of your Directus instance (eg.: https://directus.example.com - no trailing slash)

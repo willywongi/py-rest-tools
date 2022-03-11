@@ -17,8 +17,8 @@ def get_directus_client(token, base_url):
         'Authorization': f'Bearer {token}'
     }
     def directus_client(method, path, parameters=None, url=None, data=None, resource=False):
-        _parameters = {**parameters}
-        current_filter = _parameters.pop('filter')
+        _parameters = {**parameters} if parameters else {}
+        current_filter = _parameters.pop('filter', None)
         if current_filter:
             _parameters['filter'] = json.dumps(current_filter)
         
