@@ -41,7 +41,7 @@ def get_directus_client(token, base_url):
                 has_more_items = len(results) < filter_count
 
         else:
-            response = common_client(method, base_url, path, parameters, url, headers, data)
+            response = common_client(method, base_url, path, _parameters, url, headers, data)
             if response:
                 results = response['data']
             else:
