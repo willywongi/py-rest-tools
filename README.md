@@ -1,5 +1,10 @@
 # Python REST tools
 A collection of tools to help interacting with JSON REST APIs.
+## Install
+From Pypi
+```
+pip install rest-tools
+```
 ## Rationale
 I was writing a lot of code to speak to different API, and while most of them used common interfaces (REST verbs, JSON data...)
 almost every API had different ways to handle authentication and pagination. Since I ended up writing a "common ground" method
