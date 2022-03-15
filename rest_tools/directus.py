@@ -14,7 +14,8 @@ def get_directus_client(token, base_url):
         (no trailing slash)
     """
     headers = {
-        'Authorization': f'Bearer {token}'
+        'Authorization': f'Bearer {token}',
+        "Cache-Control": "no-store"
     }
     def directus_client(method, path, parameters=None, url=None, data=None, resource=False):
         _parameters = {**parameters} if parameters else {}
