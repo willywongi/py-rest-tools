@@ -72,6 +72,10 @@ All these clients are packaged and documented (in code).
 #### `get_clickup_client(api_token, base_url)`
 - `api_token`: A personal token from the *Apps* section in your User Settings (see: https://jsapi.apiary.io/apis/clickup20/introduction/authentication/personal-token.html).
 - `base_url`: the default should be changed only if asked from ClickUp
+### Directus
+#### `get_directus_client(token, base_url)`
+ - `token`: A _static token_ for the user (see: https://docs.directus.io/reference/authentication/#access-tokens)
+ - `base_url`: the complete base URL of your Directus instance (eg.: https://directus.example.com - no trailing slash)
 ### Eventbrite
 #### `get_eventbrite_client(token, base_url)`
  - `token`: A token from your developer profile page (see: https://www.eventbrite.com/platform/api#/introduction/authentication).
@@ -80,7 +84,6 @@ All these clients are packaged and documented (in code).
 #### `get_fusionauth_client(api_key, base_url)`
  - `api_key`: the api key, see: https://fusionauth.io/docs/v1/tech/apis/authentication/#api-key-authentication
  - `base_url`: the url of your Fusionauth instance
-
 ### Livestorm
 #### `get_livestorm_client(apikey, base_url)`
  - `apikey`: A token from the Account Settings > Integrations page
@@ -90,13 +93,14 @@ All these clients are packaged and documented (in code).
 #### `get_mailchimp_client(access_token, base_url)`
  - `access_token`: A apikey from your developer profile page (see: https://mailchimp.com/developer/marketing/docs/fundamentals/#authenticate-with-an-api-key).
  - `base_url`: the default should be changed only if asked from Mailchimp
+### Prestashop
+#### `get_prestashop_client(access_key, base_url)`
+Before being able to access the REST API, please follow the [instructions](https://devdocs.prestashop.com/1.7/webservice/getting-started/) to enable the Webservice. 
+ - `access_key`: A access_key for the Webservice of your Prestashop instance (see: https://devdocs.prestashop.com/1.7/webservice/tutorials/creating-access/).
+ - `base_url`: the installation path of your Prestashop installation (eg.: https://store.example.com/api)
 ### Wordpress
 #### `get_wordpress_client(api_key, api_secret, base_url)`
 This client requires the [JWT Auth plugin](https://github.com/WP-API/jwt-auth) to [generate key pair](https://github.com/WP-API/jwt-auth#generate-key-pairs).
  - `api_key`: Key pair, key
  - `api_secret`: Key pair, secret. 
  - `base_url`: The installation path of your WP installation; please include `/wp-json` at the end.
-### Directus
-#### `get_directus_client(token, base_url)`
- - `token`: A _static token_ for the user (see: https://docs.directus.io/reference/authentication/#access-tokens)
- - `base_url`: the complete base URL of your Directus instance (eg.: https://directus.example.com - no trailing slash)
