@@ -20,7 +20,7 @@ def get_prestashop_client(access_key:str, base_url:str):
                 }
 
                 result = common_client(GET, base_url, path=path, parameters=paged_parameters, headers=headers)
-                resource_page = result.get(resource, [])
+                resource_page = result.get(resource, []) if result else []
                 has_more_items = len(resource_page) == number
                 index += number
                 resources.extend(resource_page)
