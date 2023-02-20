@@ -104,3 +104,9 @@ This client requires the [JWT Auth plugin](https://github.com/WP-API/jwt-auth) t
  - `api_key`: Key pair, key
  - `api_secret`: Key pair, secret. 
  - `base_url`: The installation path of your WP installation; please include `/wp-json` at the end.
+### Pipedrive
+#### `get_pipedrive_client(api_token, domain)`
+This client requires a [personal API token](https://pipedrive.readme.io/docs/how-to-find-the-api-token)
+     and the [company domain](https://pipedrive.readme.io/docs/how-to-get-the-company-domain).
+ - `api_token`: A personal API token
+ - `domain`: The company domain name assigned (es.: `yourcompany` will become `https://yourcompany.pipedrive.com`)
