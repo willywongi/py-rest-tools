@@ -42,7 +42,7 @@ def get_pipedrive_client(api_token:str, domain:str) -> Callable:
                 try:
                     has_more_items = result['additional_data']['pagination']['more_items_in_collection']
                 except KeyError:
-                    hs_more_items = False
+                    has_more_items = False
 
                 current_resources = result['data']
                 requested_start += len(current_resources)
